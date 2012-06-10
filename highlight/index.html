@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>JS实现隔行高亮变色</title>
+		<style type="text/css">
+			html,body,div,ul,li {
+				margin: 0 0;
+				padding: 0 0;
+			}
+			li {
+				list-style-type: none;
+			}
+			.list {
+				width: 40%;
+				margin: 0 auto;
+				margin-top:5em;
+			}
+			.list li {
+				height: 2em;
+				line-height: 2em;
+			}
+			.list a{
+				color:blue;
+				font-size: .8em;
+				padding-left: 1em;
+			}
+			.highlight {
+				background-color:#c00;
+			}
+		</style>
+		<script type="text/javascript">
+			// highlight : true 高亮, false: 非高亮
+			// bgcolorA = '#ff0', bgcolorB = '#ccc'
+/*
+			function changeBgColor( li , bgcolor ) {
+				li.style.backgroundColor = bgcolor;
+				saveHighLightColor(li);
+				defaultHighLightState(li);
+			}
+			function saveHighLightColor( li ) {
+				li.bgcolor = li.style.backgroundColor;
+			}
+			function defaultHighLightState( li ) {
+				li.highlight = false;
+			}
+			
+			function init() 
+			{
+				var bgcolorA = '#ff0',
+					bgcolorB = '#ccc',
+					highColor = '#000',
+					clickHighColor = '#c00',
+					
+					oUl = document.getElementById('List'),
+					oLis = oUl.getElementsByTagName('li');
+				
+				for( var i = 0 , l = oLis.length; i < l; i++ ) 
+				{
+					changeBgColor( oLis[i], i%2 == 0 ? bgcolorA : bgcolorB);
+					
+					oLis[i].onclick = function() 
+					{
+						if( !this.highlight ) {
+							this.style.backgroundColor = clickHighColor;
+							this.highlight = true;
+						}
+						else {
+							this.style.backgroundColor = this.bgcolor;
+							this.highlight = false;
+						}
+					}
+					oLis[i].onmouseover = function() 
+					{
+						this.style.backgroundColor = highColor;
+					}
+					oLis[i].onmouseout = function() 
+					{
+						if( this.highlight) {
+							this.style.backgroundColor = clickHighColor;
+						} else {
+							this.style.backgroundColor = this.bgcolor
+						}
+					}
+				}
+			}
+			window.onload = init;
+*/
+			var highLight = (function() 
+			{
+				var id,tag,highColor,clickHighColor,stripeA,stripeB;
+					
+				function changeBgColor( elem , bgcolor ) {
+					elem.style.backgroundColor = bgcolor;
+				}
+				
+				function saveHighLightColor( elem ) {
+					elem.bgcolor = elem.style.backgroundColor;
+				}
+				
+				function defaultHighLightState( elem ) {
+					elem.highlight = false;
+				}
+				
+				function main() 
+				{
+					var wrap = document.getElementById(id),
+						elems = wrap.getElementsByTagName(tag);
+					
+					wrap.clickHighColor = clickHighColor;
+					wrap.highColor = highColor;
+					
+					for( var i = 0 , l = elems.length , events = ['click','mouseover','mouseout']; i < l; i++ ) 
+					{
+						elem = elems[i];
+						
+						if( stripeA !== false  ) changeBgColor( elem, i%2 == 0 ? stripeA : stripeB);
+						
+						saveHighLightColor(elem);
+						defaultHighLightState(elem);
+						
+						
+						for( var y = 0 ,len = events.length; y < len; y++ ) 
+						{
+							elem['on'+events[y]] = function( e ) 
+							{
+								var tye = e.type; e = e || window.event;
+								
+								if(tye == 'click') 
+								{
+									changeBgColor(this,!this.highlight ? wrap.clickHighColor : this.bgcolor);
+									this.highlight = !this.highlight;
+								} 
+								else if(tye == 'mouseover') 
+								{
+									changeBgColor(this,wrap.highColor);
+								} 
+								else if(tye == 'mouseout') 
+								{
+									changeBgColor(this,this.highlight ? wrap.clickHighColor : this.bgcolor);
+								}
+							}
+						}
+					}
+				}
+				return {
+					set : function(conf) {
+						id = conf['wrap'], 
+						tag = conf['tag'],
+						highColor = conf['high_color'],
+						clickHighColor = conf['click_high_color'];
+						if( conf['stripe'] ) {
+							stripeA = conf['stripe'][0],stripeB = conf['stripe'][1];
+						} else {
+							stripeA = stripeB = false;
+						}
+						return this;
+					},
+					run : function() {
+						main();
+					}
+				}
+			})();
+			
+			window.onload = function(){
+				highLight.set({
+					wrap: 'List', // id
+					tag:'li',// 子标签
+					high_color: '#215481', // 鼠标移动高亮色
+					click_high_color : 'blue',//鼠标点击高亮色
+					stripe : ['#56aaff','#ecf6ff'] // 隔行变色，非必选项，可以不定义
+				}).run();
+				highLight.set({
+					wrap: 'List2', // id
+					tag:'li',// 子标签
+					high_color: '#c00', // 鼠标移动高亮色
+					click_high_color : 'blue'//鼠标点击高亮色
+				}).run();
+				
+			}
+		</script>
+	</head>
+	<body>
+		<ul class="list" id="List">			<li><a href="" title="">推荐一个github教程_软件架构_我记录</a></li>			<li><a href="" title="">github入门使用教程_百度文库</a></li>			<li><a href="" title="">勇之轨迹» Github 使用教程–git入门</a></li>			<li><a href="" title="">10篇写给Git初学者的最佳教程| 帕兰映像</a></li>			<li><a href="" title="">Git与Github入门资料← 阳志平的个人网站::技术</a></li>			<li><a href="" title="">GitHub使用教程.doc - OPEN开源文档</a></li>			<li><a href="" title="">GitHub教程_王敏_新浪博客</a></li>			<li><a href="" title="">Github Pages极简教程- 雁起平沙的网络日志</a></li>			<li><a href="" title="">git的使用教程_Kimsh</a></li>			<li><a href="" title="">Git教程【译】 - zhangjing230 - 博客园</a></li>		</ul>
+		<ul class="list" id="List2">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>
