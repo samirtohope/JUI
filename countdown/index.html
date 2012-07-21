@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>countdown</title>
+	<style type="text/css">
+	*{
+		margin: 0 0;
+		padding: 0 0;
+	}
+	.wrap{
+		margin: 10px auto;
+		width: 60%;
+	}
+	.title{
+		font-size: 26px;
+		font-family: Microsoft YaHei;
+		color: #333;
+	}
+	.countdown-one,.countdown-two,.countdown-three {
+		font-size: 24px;
+		font-family: Microsoft YaHei;
+		color: green;
+	}
+	.countdown-two{
+		color: orange;
+	}
+	.countdown-three{
+		color: red;
+	}
+	.stop{
+		color: #c00;
+	}
+	</style>
+	<script type="text/javascript" src="countdown.js"></script>
+	<script type="text/javascript">
+		
+		window.onload = function() 
+		{
+			new Countdown({
+				// 结束时间戳
+				endTimeStamp: +new Date('2012-07-27 20:12:00'),
+				// 间隔时间
+				interval : 1000,
+				// 运行中回调函数
+				runing: function( parts ) 
+				{
+					var D = parts['d'], 
+						H = parts['h'], 
+						M = parts['m'], 
+						S = parts['s'];
+
+					var elem = document.getElementById('elem-one');
+						
+					if(D < 0)
+					{
+						elem.innerHTML = '<span class="stop">已经结束</span>';
+					} 
+					else 
+					{
+						var d = D == 0 ? '' : '<span class="days">'+D+'天'+'</span>';
+						var h = H == 0 ? '' : '<span class="hours">'+H+'小时'+'</span>';
+						var m = M == 0 ? '' : '<span class="minutes">'+M+'分'+'</span>';
+						var s = '<span class="seconds">'+(S||60)+'秒'+'</span>';
+						elem.innerHTML = d + h + m + s;
+					}
+				}
+			});
+
+
+			new Countdown({
+				// 结束时间戳
+				endTimeStamp: +new Date('2012-09-30 18:10:10'),
+				// 间隔时间
+				interval : 60 * 1000,
+				// 运行中回调函数
+				runing: function( parts ) 
+				{
+					var D = parts['d'], 
+						H = parts['h'], 
+						M = parts['m'], 
+						S = parts['s'];
+
+					var elem = document.getElementById('elem-two');
+						
+					if(D < 0)
+					{
+						elem.innerHTML = '<span class="stop">已经结束</span>';
+					} 
+					else 
+					{
+						var d = D == 0 ? '' : '<span class="days">'+D+'天'+'</span>';
+						var h = H == 0 ? '' : '<span class="hours">'+H+'小时'+'</span>';
+						var m = M == 0 ? '' : '<span class="minutes">'+M+'分'+'</span>';
+						// var s = '<span class="seconds">'+(S||60)+'秒'+'</span>';
+						var s = '';
+						elem.innerHTML = d + h + m + s;
+					}
+				}
+			});
+
+
+			new Countdown({
+				// 结束时间戳
+				endTimeStamp: +new Date('2012-07-21 00:00:00'),
+				// 间隔时间
+				interval : 1000,
+				// 运行中回调函数
+				runing: function( parts ) 
+				{
+					var D = parts['d'], 
+						H = parts['h'], 
+						M = parts['m'], 
+						S = parts['s'];
+
+					var elem = document.getElementById('elem-three');
+						
+					if(D < 0)
+					{
+						elem.innerHTML = '<span class="stop">已经结束</span>';
+					} 
+					else 
+					{
+						var d = D == 0 ? '' : '<span class="days">'+D+'天'+'</span>';
+						var h = H == 0 ? '' : '<span class="hours">'+H+'小时'+'</span>';
+						var m = M == 0 ? '' : '<span class="minutes">'+M+'分'+'</span>';
+						var s = '<span class="seconds">'+(S||60)+'秒'+'</span>';
+						elem.innerHTML = d + h + m + s;
+					}
+				}
+			});
+		}
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<h2 class="title">距离伦敦奥运会开幕还有:</h2>
+		<div class="countdown-one" id="elem-one"></div>
+	</div>
+	<div class="wrap">
+		<h2 class="title">距离2012年国庆节还有:</h2>
+		<div class="countdown-two" id="elem-two"></div>
+	</div>
+	<div class="wrap">
+		<h2 class="title">距离2012年端午节还有:</h2>
+		<div class="countdown-three" id="elem-three"></div>
+	</div>
+</body>
+</html>
