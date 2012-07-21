@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+<head>
+	<meta charset="UTF-8">
+	<title>简单的手风琴效果</title>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		li{list-style: none;font-size: 12px;}
+		a{text-decoration: none;}
+		.image-rank{width: 310px;margin: 20px 0 0 50px;}
+		.image-rank .bd{background-color: #333;height: 376px;}
+		.image-rank .list{margin-left: 10px;}
+		.image-rank .list .item{overflow: hidden;zoom:1;clear:both;border-bottom: 1px dashed #444;}
+		.image-rank .list .title{line-height: 27px;color: #fff;}
+		.image-rank .list .ico{float: left;width: 22px;height: 16px;border: 1px solid #111;text-align: center;color: #fff;background-color: #222;margin-right: 10px;margin-top: 5px;}
+		.image-rank .list .front{background-color: #c00;border-color: #f00;border-bottom-color: #900;border-right-color: #900;}
+		.image-rank .list .summary{margin: 10px 0;overflow: hidden;_display:inline;color: #ccc;line-height: 20px;}
+		.image-rank .list .thumb{border: 4px solid #fff;float: left;margin-right: 10px;}
+		.image-rank .list .summary{margin: 10px 0;overflow: hidden;_display:inline;color: #ccc;line-height: 20px;}
+	</style>
+
+	<script type="text/javascript">
+		function id(name) {
+			return typeof name == 'object' ? name : document.getElementById(name);
+		}
+		function tag(elem,name) {
+		    return (elem || document).getElementsByTagName(name);
+		}
+		function simpleAccordion( Id,defaultIndex ) {
+			var accordion = id(Id), 
+				items 	  = tag(accordion,'li');
+			var last 	  = tag(items[defaultIndex],'div')[1];
+
+			for(var i = 0, l = items.length; i < l; i++) 
+			{
+				items[i].onmouseover = function() 
+				{
+					if( last ) 
+						last.style.display = 'none';
+
+			 		var summary = tag( this, 'div' )[1];
+						summary.style.display = 'block';
+
+					last = summary;
+				}
+			}
+		}
+		window.onload = function(){
+			simpleAccordion('accordion_elem',2);
+		}
+	</script>
+
+</head>
+
+<body>
+	<aside class="image-rank">
+		<div class="hd"><!-- 图片排行榜 --></div>
+		<div class="bd">
+			<ul class="list" id="accordion_elem">
+				<li class="item">
+					<div class="ov">
+						<em class="ico front">1</em><a href="" class="title">美国电影导演潜入海洋最深处</a>
+					</div>
+					<div class="summary" style="display: none;">
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+					</div>
+				</li>
+				<li class="item">
+					<div class="ov">
+						<em class="ico front">2</em><a href="" title="" class="title">印尼民众示威抗议油价上涨</a>
+					</div>
+					<div class="summary" style="display: none;">
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+					</div>
+				</li>
+				<li class="item">
+					<div class="ov">
+						<em class="ico front">3</em><a href="" title="" class="title">首尔核峰会举行全体会议</a>
+					</div>
+					<div class="summary" style="display: block;">
+
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+
+					</div>
+
+				</li>
+
+				<li class="item">
+
+					<div class="ov">
+
+						<em class="ico">4</em><a href="" title="" class="title">首尔核峰会举行全体会议</a>
+
+					</div>
+
+					<div class="summary" style="display: none;">
+
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+
+					</div>
+
+				</li>
+
+				<li class="item">
+
+					<div class="ov">
+
+						<em class="ico">5</em><a href="" title="" class="title">拟传达有关钓鱼岛立场</a>
+
+					</div>
+
+					<div class="summary" style="display: none;">
+
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+
+					</div>
+
+				</li>
+
+				<li class="item">
+
+					<div class="ov">
+
+						<em class="ico">6</em><a href="" title="" class="title">日本驻华大使返京未撤换</a>
+
+					</div>
+
+					<div class="summary" style="display: none;">
+
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+
+					</div>
+
+				</li>
+
+				<li class="item">
+
+					<div class="ov">
+
+						<em class="ico">7</em><a href="" title="" class="title">首尔核峰会举行全体会议</a>
+
+					</div>
+
+					<div class="summary" style="display: none;">
+
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+
+					</div>
+
+				</li>
+
+				<li class="item">
+
+					<div class="ov">
+
+						<em class="ico">8</em><a href="" title="" class="title">梁济自杀前问梁漱溟：这个世界会好吗</a>
+
+					</div>
+
+					<div class="summary" style="display: none;">
+
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+
+					</div>
+
+				</li>
+
+				<li class="item">
+
+					<div class="ov">
+
+						<em class="ico">9</em><a href="" title="" class="title">天津蓟县商厦失火前后监控录像公布</a>
+
+					</div>
+
+					<div class="summary" style="display: none;">
+
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+
+					</div>
+
+				</li>
+
+				<li class="item">
+
+					<div class="ov">
+
+						<em class="ico">10</em><a href="" title="" class="title">专家反驳称无根据</a>
+
+					</div>
+
+					<div class="summary" style="display: none;">
+
+						<a href="" title=""><img src="1.png" class="thumb" alt="" width="80" height="60" /></a>
+
+						<p>海南省人民代表大会常务委员会关于成立三沙市人民代表大会筹备组的决定。</p>
+
+					</div>
+
+				</li>
+
+			</ul>
+
+		</div>
+
+	</aside>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+﻿ html,body,div,span,ul,li{margin:0 0; padding:0 0;}
+ a{text-decoration:none;}
+
+ .implayer{
+ 	width:430px;
+	box-shadow:3px 3px 6px #ccc;
+	border:1px solid #86BBF4;
+	border-radius:14px;
+	background-color:#F7FAFF;
+ }
+ .progress-bar{
+	height:26px;
+	line-height:26px;
+	border-radius:8px 8px 0 0;
+	box-shadow:1px 1px 10px #ddd;
+	background-color:#C9E2FC;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#61A7F2), to(#5590D2));
+	position:relative;
+}
+ .music-time-show{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#fff;
+	font-size:.8em;
+	font-weight:normal;
+	position:absolute;
+	left:.7em;
+ }
+ .progress{
+ 	position:absolute;
+	left:8em;
+	top:.7em;
+	width:160px;
+	height:5px;
+	background-color:#DDE9FF;
+	border-radius:8px;
+}
+ .current-progress{
+ 	background-color:#ff0;
+	height:5px;
+	/*
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#265BBF), to(#1143A0));
+	*/
+	border-radius:8px;
+	box-shadow:0px 0px 1px #1C4BA0;
+	/*background-image:-webkit-gradient(linear, left top, left bottom, from(#C4D8FF), to(#89B2FF));*/
+ }
+ #set-progress{
+ 	height:5px;
+	position:absolute;
+	top:0;
+	z-index:10;
+	width:100%;
+	cursor:pointer;
+ }
+ .ui-play-control{
+	overflow:hidden;
+	line-height:3;
+	padding: 0 5px;
+	margin-top:.5em;
+ }
+ .control-a{
+ 	float:left;
+ }
+ .control-b{
+ 	float:right;
+ }
+ 
+ .currenttime,.totaltime{font-family:Microsoft YaHei;}
+ .totaltime{color:#CFD8FC;}
+ .ico{
+ 	font-size:.6em;
+	font-family:"Gill Sans MT Condensed";
+	background-color:#EAF1FF;
+	border:1px solid #8086BC;
+	border-radius:20px;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#61A7F2), to(#5590D2));
+	color:#fff;
+	font-family:Microsoft YaHei;
+	box-shadow: 1px 1px 4px #ADB5FF;
+ }
+ 
+ #play_ico{
+	display: inline-block;
+	width:40px;height:40px;line-height:26px;
+	font-size:18px;
+	font-weight:bold;
+ }
+ #prev{margin-left:.6em}
+ .current_loop_ico, .all_loop_ico, .random_play_ico{
+ 	color:#C8DFF7;
+	border-color:#6C99C9;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#77B9FF), to(#59A5F7));
+ }
+ .current_loop_ico:hover, .all_loop_ico:hover, .random_play_ico:hover{ 	color:#fff; } 
+ .ico:hover,.currentMode{
+ 	background-image:-webkit-gradient(linear, left top, left bottom, from(#0D72DD), to(#073A70));
+	box-shadow: 1px 1px 4px #8E9AFF;
+	border-color:#333;
+ }
+ .disable,.disable:hover{
+ 	background-image:-webkit-gradient(linear, left top, left bottom, from(#E5E5E5), to(#D3D3D3));
+	color:#999;
+	border:1px solid #ccc;
+	border-radius:20px;
+ }
+ .ui-playlists{
+ 	display:block;
+ 	background-image:-webkit-gradient(linear, left top, left bottom, from(#61A7F2), to(#5590D2));
+	padding: .5em 0;
+	margin-top:.8em;
+	border-radius:0px 0px 8px 8px;
+ }
+ .ui-playlists li{
+ 	list-style-type: none;
+ }
+ .ui-playlists li a{
+ 	font-family:"Lucida Console",Microsoft YaHei;
+	font-size:.8em;
+	line-height:2;
+	color:#C9EEFF;
+ }
+ .ui-playlists li a.current{font-weight:bold;color:#fff;}
+ .ui-playlists li a:hover{color:#fff;}
+ .ui-playlists li span{margin-right:.5em;margin-left:1em;}
+ 
+ /*
+  * 音量样式
+  */
+ .volume-wrap{position:absolute;;left:330px;}
+ .muted{font-size:.8em;color:#fff;position:absolute;width:40px;}
+ .volume-total{position:absolute;top:12px;left:40px;height:3px;width:50px;background-color:#FFF;}
+ .current_volume{position:absolute;height:3px;background-color:#56DDFF;}
+ #set-volume{width:100%;position:absolute;height:3px;z-index:10;cursor:pointer;}

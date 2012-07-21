@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>imPlayer音乐播放器</title>
+		<script type="text/javascript" src="implayer_js/function.js"></script>
+		<script type="text/javascript" src="implayer_js/event.js"></script>
+		<script type="text/javascript" src="implayer_js/implayer-min.js"></script>
+		<script type="text/javascript" src="implayer_js/music_src.js"></script>
+		<script type="text/javascript" src="implayer_js/init.js"></script>
+		<link rel="stylesheet" type="text/css" href="implayer_theme/player.css" />
+	</head>
+	<body>
+	<div style="height:1000px;font-size:12em;color:#EDF5FF;font-family:'Arial Black';"><span style="line-height:1;padding-left:1em;">imusic</span></div>
+	<div class="implayer" style="position:absolute;top:30%;left:30%;">
+		<div class="progress-bar">			<time class="music-time-show"><span class="currenttime" id="currenttime">00:00</span> / <span class="totaltime" id="totaltime">00:00</span></time>			<div class="progress"><div class="current-progress" id="current_progress"></div><div id="set-progress"></div></div>
+			<div class="volume-wrap"><span class="muted">音量：</span><div class="volume-total"><div id="current_volumn" class="current_volume"></div><div id="set-volume"></div></div></div>		</div>
+		<div class="ui-play-control">			<div class="control-a">				<input type="button" value="◀◀" id="prev" class="ico" />				<input type="button" value="▶" id="play_ico" class="ico" />				<input type="button" value="▶▶" id="next" class="ico" />				<input type="button" value="■" id="stop_ico" class="ico" disabled="true"  />				<input type="button" value="换歌" id="switch_pl" class="ico" title="换首歌曲，试试手气"  />			</div>			<div class="control-b">				<input type="button" value="单曲" id="current_loop" class="ico current_loop_ico" title="单曲循环" />				<input type="button" value="全部" id="all_loop" class="ico all_loop_ico" title="全部循环"  />				<input type="button" value="随机" id="random_play" class="ico random_play_ico" title="随机播放"  />			</div>		</div>
+		<datalist id="playlists" class="ui-playlists"></datalist>
+	</div>
+	
+	</body>
+</html>

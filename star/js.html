@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			ul { margin: 100px auto; width: 600px; list-style: none; }
+			li{width:30px;height:30px;float:left;background: url('star.gif') no-repeat 0 0px;}
+			.over{background-position:0 -60px;}
+		</style>
+		<script type="text/javascript">
+			/**
+			 * 1、首先默认分值，我们最好声明一个变量,这里声明为：stared，并且默认值为1，此时为屏幕上就为1颗星
+			 * 2、评分的操作是靠鼠标点击来实现的，故鼠标点击的时候要记录好你的分值，必然点击第3颗星星，就要记录为3，我们保存到stared里
+			 * 3、遍历所有星星，要做三件事：
+			 * 	a、aLi[i].index = i
+			 * 	b、设置默认分值
+			 *  c、绑定所有事件，鼠标点击、移上、移出
+			 *  
+			 * 4、鼠标点击： 
+			 */
+			function setStar( elem , cls ) 
+			{
+				elem.className = cls;
+			}
+			function run( elems , max ) 
+			{
+				for(var i = 0; i < elems.length; i++)
+				{
+					setStar(elems[i],i <= max ? 'over' : '');
+				}
+			}
+			function star()
+			{
+				var aLi = document.getElementsByTagName('li');
+				
+				var stared = 0;
+				
+				for(var i = 0, l = aLi.length; i < l; i++)
+				{
+					aLi[i].index = i;
+					
+					if( i < stared ) 
+					{
+						setStar(aLi[i],'over');
+					}
+					
+					aLi[i].onclick = function()
+					{
+						run(aLi,this.index);
+						stared = this.index + 1;
+					}
+					
+					aLi[i].onmouseover = function()
+					{
+						run(aLi,this.index);
+					}
+					
+					aLi[i].onmouseout = function()
+					{
+						run(aLi,stared - 1);
+					}
+				}
+			}
+			window.onload = star;
+		</script>
+	</head>
+	<body>
+		<ul>			<li></li>			<li></li>			<li></li>			<li></li>			<li></li>		</ul>
+	</body>
+</html>
+
