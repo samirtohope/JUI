@@ -9,12 +9,12 @@ function Countdown( conf )
 }
 Countdown.prototype = {
   	// TODO: 时间换算，把结束时间和当前系统时间比较得到的差值需要换算成秒，再把秒换算成天，以天为单位进行后续的计算
-	kenel: function()
+	kernel: function()
 	{	
 		var now = +new Date();
 		
 		// 时间戳转秒需要除以1000
-		var diff = (this.end - now)/1000; 
+		var diff = (this.end - now)/1000;
 
 		var aDaytoSecond = 24 * 60 * 60;
 
@@ -54,7 +54,7 @@ Countdown.prototype = {
 	},
 	run: function()
 	{
-		var parts = this.kenel();
+		var parts = this.kernel();
 		if( parts['d'] < 0 ) this.stop();
 		this.conf['runing']( parts );
 	}
