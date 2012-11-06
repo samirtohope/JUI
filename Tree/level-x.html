@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Simple Tree</title>
+	<style type="text/css">
+	* {
+		margin: 0 0;
+		padding: 0 0;
+	}
+	li,ul {
+		list-style-type: none;
+	}
+	body {
+		font-size: 12px;
+	}
+	a {
+		text-decoration: none;
+		color: #000;
+	}
+	.wrap {
+		width: 80%;
+		margin: 100px auto auto auto;
+	}
+	</style>
+	<link rel="stylesheet" href="ui/tree.css" />
+	<script src="jquery/jquery_1.3.2.min.js"></script>
+	<script src="js/tree.js"></script>
+	<script>
+		$(function(){
+			new $.Tree($('.wrap'), {
+				cls: 'simple',
+				check: function(checkedNodes, dataNode, checkeds) {
+					console.info(dataNode.attr('data-id'));
+					console.info(checkeds);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="treeview">
+			<li class="tree-node">
+				<div class="operate expand" data-id="1" id="ii">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="" title="" class="text">思拓专区</a>
+				</div>
+				<ul class="tree-child">
+					<li class="tree-node">
+						<div class="operate expand" data-id="7">
+							<div class="hitarea"></div>
+							<div class="ico"></div>
+							<a href="" title="" class="text">行业动态</a>
+						</div>
+						<ul class="tree-child">
+							<li class="tree-node">
+								<div class="operate expand" data-id="7">
+									<div class="hitarea"></div>
+									<div class="ico"></div>
+									<a href="" title="" class="text">行业动态</a>
+								</div>
+								<ul class="tree-child">
+									<li class="tree-node">
+										<div class="operate expand" data-id="7">
+											<div class="hitarea"></div>
+											<div class="ico"></div>
+											<a href="" title="" class="text">行业动态</a>
+										</div>
+										<ul class="tree-child">
+											<li class="tree-node">
+												<div class="operate" data-id="7">
+													<div class="ico"></div>
+													<a href="" title="" class="text">行业动态</a>
+												</div>
+											</li>
+											<li class="tree-node">
+												<div class="operate" data-id="8">
+													<div class="ico"></div>
+													<a href="" title="" class="text">思拓教程</a>
+												</div>
+											</li>
+										</ul>
+									</li>
+									<li class="tree-node">
+										<div class="operate" data-id="8">
+											<div class="ico"></div>
+											<a href="" title="" class="text">思拓教程</a>
+										</div>
+									</li>
+								</ul>
+							</li>
+							<li class="tree-node">
+								<div class="operate" data-id="8">
+									<div class="ico"></div>
+									<a href="" title="" class="text">思拓教程</a>
+								</div>
+							</li>
+						</ul>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="8">
+							<div class="ico"></div>
+							<a href="" title="" class="text">思拓教程</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse"  data-id="2">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="" title="" class="text">新闻</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="9">
+							<div class="ico"></div>
+							<a href="" title="" class="text">国内</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="10">
+							<div class="ico"></div>
+							<a href="" title="" class="text">国际</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse" data-id="3">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="" title="" class="text">娱乐</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="11">
+							<div class="ico"></div>
+							<a href="" title="" class="text">娱乐动态</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="12">
+							<div class="ico"></div>
+							<a href="" title="" class="text">热剧剧情</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="13">
+							<div class="ico"></div>
+							<a href="" title="" class="text">片花欣赏</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse" data-id="4">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="" title="" class="text">汽车</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="14">
+							<div class="ico"></div>
+							<a href="" title="" class="text">行业资讯</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="15">
+							<div class="ico"></div>
+							<a href="" title="" class="text">导购试驾</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse" data-id="5">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="" title="" class="text">房产</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="16">
+							<div class="ico"></div>
+							<a href="" title="" class="text">房产动态</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="17">
+							<div class="ico"></div>
+							<a href="" title="" class="text">创意家居</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse" data-id="6">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="" title="" class="text">旅游</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="18">
+							<div class="ico"></div>
+							<a href="" title="" class="text">美食</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="19">
+							<div class="ico"></div>
+							<a href="" title="" class="text">游记</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse" data-id="16">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="" title="" class="text">测试</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="18">
+							<div class="ico"></div>
+							<a href="" title="" class="text">子项目</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

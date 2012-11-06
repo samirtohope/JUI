@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>oneLoad Tree</title>
+	<style type="text/css">
+	* {
+		margin: 0 0;
+		padding: 0 0;
+	}
+	li,ul {
+		list-style-type: none;
+	}
+	body {
+		font-size: 12px;
+	}
+	a {
+		text-decoration: none;
+		color: #000;
+	}
+	.wrap {
+		width: 80%;
+		margin-left: 50px;
+	}
+	</style>
+	<link rel="stylesheet" href="ui/tree.css" />
+	<script src="jquery/jquery_1.3.2.min.js"></script>
+	<script src="js/tree.js"></script>
+	<script>
+		$(function(){
+			new $.Tree($('.wrap'), {
+				dynamic: true,
+				treeData: treeJSON
+			});
+		});
+	</script>
+</head>
+<body>
+	<script type="text/javascript">
+	var treeJSON = [
+		{'catid':'1','name':'\u601d\u62d3\u4e13\u533a','hasChild':true,'childs':[{'catid':'7','name':'\u884c\u4e1a\u52a8\u6001','hasChild':false,'childs':[]},{'catid':'8','name':'\u5e2e\u52a9\u6559\u7a0b','hasChild':false,'childs':[]}]},
+		{'catid':'2','name':'\u65b0\u95fb','hasChild':true,'childs':[{'catid':'9','name':'\u56fd\u5185','hasChild':false,'childs':[]},{'catid':'10','name':'\u56fd\u9645','hasChild':false,'childs':[]}]},
+		{'catid':'3','name':'\u5a31\u4e50','hasChild':true,'childs':[{'catid':'11','name':'\u5a31\u4e50\u52a8\u6001','hasChild':false,'childs':[]},{'catid':'12','name':'\u70ed\u5267\u5267\u60c5','hasChild':false,'childs':[]},{'catid':'13','name':'\u7247\u82b1\u6b23\u8d4f','hasChild':false,'childs':[]}]},
+		{'catid':'4','name':'\u6c7d\u8f66','hasChild':true,'childs':[{'catid':'14','name':'\u884c\u4e1a\u8d44\u8baf','hasChild':false,'childs':[]},{'catid':'15','name':'\u5bfc\u8d2d\u8bd5\u9a7e','hasChild':false,'childs':[]}]},
+		{'catid':'5','name':'\u623f\u4ea7','hasChild':true,'childs':[{'catid':'16','name':'\u623f\u4ea7\u52a8\u6001','hasChild':false,'childs':[]},{'catid':'17','name':'\u521b\u610f\u5bb6\u5c45','hasChild':false,'childs':[]}]},
+		{'catid':'6','name':'\u65c5\u6e38','hasChild':true,'childs':[{'catid':'14','name':'\u7f8e\u98df','hasChild':false,'childs':[]},{'catid':'15','name':'\u6e38\u8bb0','hasChild':false,'childs':[]}]}
+	];
+	</script>
+	<div class="wrap">
+		
+	</div>
+</body>
+</html>

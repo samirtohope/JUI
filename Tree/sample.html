@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Sample Tree</title>
+	<style type="text/css">
+	* {
+		margin: 0 0;
+		padding: 0 0;
+	}
+	li,ul {
+		list-style-type: none;
+	}
+	body {
+		font-size: 12px;
+	}
+	a {
+		text-decoration: none;
+		color: #000;
+	}
+	.wrap {
+		width: 80%;
+		margin-left: 50px;
+	}
+	</style>
+	<link rel="stylesheet" href="ui/tree.css" />
+	<script src="jquery/jquery_1.3.2.min.js"></script>
+	<script src="js/tree.js"></script>
+	<script>
+		$(function(){
+			new $.Tree($('.wrap'));
+		});
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul class="treeview">
+			<li class="tree-node">
+				<div class="operate expand" data-id="1">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="#" title="" class="text">常用网址</a>
+				</div>
+				<ul class="tree-child">
+					<li class="tree-node">
+						<div class="operate" data-id="7">
+							<div class="ico"></div>
+							<a href="http://www.taobao.com/" title="" class="text">淘宝网</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="8">
+							<div class="ico"></div>
+							<a href="http://www.google.com.hk/" title="" class="text">谷歌</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="8">
+							<div class="ico"></div>
+							<a href="http://www.icbc.com.cn/" title="" class="text">工商银行</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="8">
+							<div class="ico"></div>
+							<a href="http://www.zol.com.cn/" title="" class="text">中关村在线</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="8">
+							<div class="ico"></div>
+							<a href="http://www.cmstop.com/" title="" class="text">CmsTop</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse"  data-id="2">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="#" title="" class="text">生活</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="9">
+							<div class="ico"></div>
+							<a href="http://www.58.com/?path=?utm_source%3d1616%26utm_campaign%3d1616-103" title="" class="text">58同城</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="10">
+							<div class="ico"></div>
+							<a href="http://www.kuyiso.com/" title="" class="text">同城百姓网</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="10">
+							<div class="ico"></div>
+							<a href="http://www.dianping.com/" title="" class="text">大众点评网</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="10">
+							<div class="ico"></div>
+							<a href="http://zu.soufun.com/" title="" class="text">搜房网租房</a>
+						</div>
+					</li>
+					
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse" data-id="3">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="#" title="" class="text">购物</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="11">
+							<div class="ico"></div>
+							<a href="http://www.suning.com/" title="" class="text">苏宁易购</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="12">
+							<div class="ico"></div>
+							<a href="http://www.dangdang.com/" title="" class="text">当当网</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="13">
+							<div class="ico"></div>
+							<a href="http://www.amazon.cn/" title="" class="text">卓越亚马逊</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse" data-id="4">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="#" title="" class="text">团购网</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="14">
+							<div class="ico"></div>
+							<a href="http://beijing.ftuan.com/" title="" class="text">F团团购</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="15">
+							<div class="ico"></div>
+							<a href="http://beijing.manzuo.com/" title="" class="text">满座网</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse" data-id="5">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="#" title="" class="text">影视</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="16">
+							<div class="ico"></div>
+							<a href="http://www.tudou.com/albumplay/33R1T-Ax4lQ.html" title="" class="text">倭寇的踪迹</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="17">
+							<div class="ico"></div>
+							<a href="http://www.iqiyi.com/dianying/20110112/3f6207d9183a1e13.html" title="" class="text">赵氏孤儿</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tree-node">
+				<div class="operate collapse" data-id="6">
+					<div class="hitarea"></div>
+					<div class="ico"></div>
+					<a href="#" title="" class="text">小说</a>
+				</div>
+				<ul class="tree-child hide">
+					<li class="tree-node">
+						<div class="operate" data-id="18">
+							<div class="ico"></div>
+							<a href="http://www.qdmm.com/" title="" class="text">起点女生网</a>
+						</div>
+					</li>
+					<li class="tree-node">
+						<div class="operate" data-id="19">
+							<div class="ico"></div>
+							<a href="http://www.1001p.com/" title="" class="text">小说阅读网</a>
+						</div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

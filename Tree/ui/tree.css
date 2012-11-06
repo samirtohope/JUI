@@ -1,0 +1,104 @@
+.treeview {
+	width: 350px;
+}
+.treeview .tree-node {
+	clear: both;
+}
+.treeview .tree-child {
+	margin-left: 20px;
+}
+.treeview .operate {
+	overflow: hidden;
+	padding-top: 4px;
+}
+.treeview .hitarea {
+	width: 10px;
+	height: 10px;
+	background: url(icon.png) 0 -64px;
+	margin: 4px 2px 0 0;
+}
+/*折叠*/
+.treeview .collapse .hitarea {
+	background-position: 0 -64px;
+	display: block;
+}
+/*展开*/
+.treeview .expand .hitarea {
+	background-position: 0 0;
+	display: block;
+}
+.treeview .collapse .hitarea:hover, .treeview .collapse .hitarea.hover {
+	background-position: 0 -40px;
+	cursor: pointer;
+}
+.treeview .expand .hitarea:hover, .treeview .expand .hitarea.hover {
+	background-position: 0 -18px;
+	cursor: pointer;
+}
+.treeview .checkbox ,.treeview .radio {
+	width: 13px;
+	height: 13px;
+	background: transparent url(checkbox.gif) no-repeat 0 0;
+	margin: 2px 4px 0 0;
+}
+.treeview .checkbox.checked,.treeview .radio.checked {
+	background-position: 0 -13px;
+}
+.treeview .checkbox.hover,.treeview .checkbox.thin.hover,.treeview .radio.hover {
+	background-position: -13px 0;
+}
+.treeview .checkbox.hover.checked,.treeview .radio.hover.checked {
+	background-position: -13px -13px;
+}
+.treeview .checkbox.thin {
+	background-position: -26px 0;
+}
+.treeview .checkbox.disable,.treeview .radio.disable {
+	background-position: -39px 0;
+}
+.treeview .radio {
+	background-image: url(radio.gif);
+}
+
+.treeview .ico {
+	width: 16px;
+	height: 16px;
+	background: url(directory.png) no-repeat 0 0;
+	margin-right: 4px;
+}
+.treeview .text {
+	font-family: Microsoft YaHei;
+}
+.treeview .text:hover {
+	color: #c00;
+}
+
+.treeview .hitarea, .treeview .checkbox, .treeview .radio,.treeview .ico {
+	float: left;
+}
+.treeview .hide {
+	display: none;
+}
+
+/**
+ * simple
+ */
+ .simple .operate {
+ 	
+ }
+ .simple .ico {
+ 	background-image: url(url.png);
+ 	width: 12px;
+ 	height: 14px;
+ 	background-position: 0 2px;
+ 	opacity: .3;
+ 	filter: alpha(opacity=30);
+ }
+  .simple .expand .ico,.simple .collapse .ico {
+  	display: none;
+  }
+  .simple .operate.hover .ico {
+  	opacity: 1;
+  	filter: alpha(opacity=100);
+  }
+
